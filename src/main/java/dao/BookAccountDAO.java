@@ -1,16 +1,24 @@
 package dao;
 
-public class BookAccountDAO {
-	private static final String URL = "jdbc:mysql://localhost:3306/jdbcsample?serverTimezone=Asia/Tokyo";
-	private static final String USER = "AppUser";
-	private static final String PW = "morijyobi";
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
-	private static void loadDriver() {
+public class BookAccountDAO {
+	private static Connection getConnection() throws URISyntaxException, SQLException {
 		try {
-			// JDBCドライバのロード
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
+	    URI dbUri = new URI(System.getenv("DATABASE_URL"));
+
+	    String username = dbUri.getUserInfo().split(":")[0];
+	    String password = dbUri.getUserInfo().split(":")[1];
+	    String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+
+	    return DriverManager.getConnection(dbUrl, username, password);
 	}
 }
