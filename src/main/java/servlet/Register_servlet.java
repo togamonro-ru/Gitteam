@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.BookLibraryDAO;
-import dto.BookLibraryDTO;
+import dao.BookDAO;
+import dto.BookDTO;
 
 /**
  * Servlet implementation class Register_servlet
@@ -34,14 +34,13 @@ public class Register_servlet extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		
-		String book_name = request.getParameter("bookname");
-		String writer = request.getParameter("writer");
-		String publisher = request.getParameter("publisher");
-		String isbn_number = request.getParameter("isbnnumber");
+		int id = request.getIntHeader("id");
+		String name = request.getParameter("name");
+		int isbn = request.getIntHeader("isbn");
 		
-		BookLibraryDTO library = new BookLibraryDTO(book_name, writer, publisher, isbn_number);
+		BookDTO library = new BookDTO(id,name,isbn);
 		
-		int result = BookLibraryDAO.registerBook(library);
+		int result = BookDAO.registerBook(library);
 		
 		if(result == 1) {
 			String view = "WEB-INF/view/success2.jsp";
