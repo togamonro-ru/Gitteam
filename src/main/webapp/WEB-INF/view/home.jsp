@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>home</title>
 </head>
 <body>
-<h1>削除に成功しました</h1>
-<a href="home">戻る</a>
+<a href="BookLibraryServlet">書籍追加</a>
+<a href="DeleteFormServlet">書籍破棄</a>
+<a href="">書籍一覧</a>
 </body>
 </html>

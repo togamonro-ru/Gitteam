@@ -5,9 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>削除に成功しました</h1>
-<a href="home">戻る</a>
+	<h1>登録に失敗しました</h1>
+	<a href="home_jsp">戻る</a>
 </body>
 </html>

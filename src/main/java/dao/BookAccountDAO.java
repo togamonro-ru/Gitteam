@@ -12,6 +12,7 @@ import dto.BookAccountDTO;
 import util.GenerateHashedPw;
 import util.GenerateSalt;
 
+
 public class BookAccountDAO {
 	private static Connection getConnection() throws URISyntaxException, SQLException {
 		try {
@@ -26,6 +27,7 @@ public class BookAccountDAO {
 	    String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
 
 	    return DriverManager.getConnection(dbUrl, username, password);
+
 	}
 	public static int acountadd(BookAccountDTO account) {
 		String sql = "INSERT INTO  bookaccount VALUES(default, ?, ?, ?,?,?)";
@@ -98,16 +100,10 @@ public class BookAccountDAO {
 					String Mail = rs.getString("mail");
 					String phon = rs.getString("phon");
 					String salt= rs.getString("salt");
-
-					
 					String password = rs.getString("password");
-				
 					int Id = Integer.parseInt(id);
-					
 				String like= rs.getString("likeid");
-				
 					int Like = Integer.parseInt(like);
-
 					int Phon = Integer.parseInt(phon);
 				
 					return new BookAccountDTO(Id, name, Mail,Phon,salt,null);
@@ -122,4 +118,5 @@ public class BookAccountDAO {
 	
 }
 		
+
 	}
