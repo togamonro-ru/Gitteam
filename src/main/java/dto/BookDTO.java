@@ -35,6 +35,4 @@ public class BookDTO {
 	public void setIsbn(int isbn) {
 		this.isbn = isbn;
 	}
-	
-	
 }
