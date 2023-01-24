@@ -10,7 +10,7 @@
 </head>
 <body>
 	
-	<form action="Login" method="post">
+	<form action="login" method="post">
 		【IDとPWを入力してください。】<br>
 		ログインID：<input type="text" name="mail"><br>
 		PW：<input type="password" name="pw"><br>
