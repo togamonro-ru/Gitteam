@@ -9,7 +9,6 @@
 <body>
 <a href="BookLibraryServlet">書籍追加</a>
 <a href="DeleteFormServlet">書籍破棄</a>
-<a href="bookupdate">書籍内容更新</a>
 <a href="BookListServlet">書籍一覧</a>
 </body>
 </html>
