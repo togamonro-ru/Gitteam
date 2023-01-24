@@ -5,7 +5,6 @@ import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -84,17 +83,7 @@ public static List<BookDTO> selectAlllibrary() {
 		return result;
 	}
 	
-
-	    URI dbUri = new URI(System.getenv("DATABASE_URL"));
-
-	    String username = dbUri.getUserInfo().split(":")[0];
-	    String password = dbUri.getUserInfo().split(":")[1];
-	    String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
-
-	    return DriverManager.getConnection(dbUrl, username, password);
-	}
-	
-	public static int deleteBook(String book) {
+	public static int deleteBook (String book) {
 		String sql = "DELETE FROM book WHERE isbn = ?";
 		int result = 0;
 
@@ -117,4 +106,6 @@ public static List<BookDTO> selectAlllibrary() {
 }
 
 
-}
+	}
+	
+
