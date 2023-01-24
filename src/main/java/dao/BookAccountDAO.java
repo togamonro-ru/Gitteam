@@ -4,6 +4,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,6 +13,7 @@ import java.sql.SQLException;
 import dto.BookAccountDTO;
 import util.GenerateHashedPw;
 import util.GenerateSalt;
+
 
 public class BookAccountDAO {
 	private static Connection getConnection() throws URISyntaxException, SQLException {
@@ -26,6 +29,7 @@ public class BookAccountDAO {
 	    String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
 
 	    return DriverManager.getConnection(dbUrl, username, password);
+
 	}
 	public static int acountadd(BookAccountDTO account) {
 		String sql = "INSERT INTO  bookaccount VALUES(default, ?, ?, ?,?,?)";
@@ -117,4 +121,5 @@ public class BookAccountDAO {
 	
 }
 		
+
 	}
