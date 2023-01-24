@@ -14,7 +14,7 @@
 	<p>図書名入力：<input type="text" name="name"></p>
 	<p>ISBN：<input type="text" name="isbn"></p>
 	<input type="submit" value="送信">
-	<a href="">戻る</a>
+	<a href="home_jsp">戻る</a>
 	</form>
 </body>
 </html>

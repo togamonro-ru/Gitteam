@@ -7,6 +7,6 @@
 <title>home</title>
 </head>
 <body>
-
+	<a href="BookLibraryServlet">図書登録</a><br>
 </body>
 </html>
