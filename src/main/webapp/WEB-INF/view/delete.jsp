@@ -12,5 +12,6 @@
 		ISBN：<input type="text" name="isbn"><br>
 		<input type="submit" value="削除">
 	</form>
+	<a href="home">戻る</a>
 </body>
 </html>
