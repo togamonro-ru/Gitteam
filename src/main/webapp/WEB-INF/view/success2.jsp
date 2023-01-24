@@ -9,6 +9,6 @@
 </head>
 <body>
 	<h3>登録に成功しました。</h3>
-	<a href="Menu_jsp">戻る</a>
+	<a href="home">戻る</a>
 </body>
 </html>
