@@ -4,8 +4,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -102,11 +100,10 @@ public class BookAccountDAO {
 					String Mail = rs.getString("mail");
 					String phon = rs.getString("phon");
 					String salt= rs.getString("salt");
-					
 					String password = rs.getString("password");
-				
 					int Id = Integer.parseInt(id);
-					
+				String like= rs.getString("likeid");
+					int Like = Integer.parseInt(like);
 					int Phon = Integer.parseInt(phon);
 				
 					return new BookAccountDTO(Id, name, Mail,Phon,salt,null);
