@@ -8,6 +8,6 @@
 </head>
 <body>
 <h1>削除に成功しました</h1>
-<a href="../">戻る</a>
+<a href="home">戻る</a>
 </body>
 </html>
