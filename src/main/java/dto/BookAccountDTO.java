@@ -65,6 +65,4 @@ public class BookAccountDTO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
 }
