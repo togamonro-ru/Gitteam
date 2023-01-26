@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>削除に失敗しました</h1>
+<h1>削除に失敗しました。</h1>
 <a href="home">戻る</a>
 </body>
 </html>
