@@ -34,11 +34,11 @@ public class Register_servlet extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		
-		int id = request.getIntHeader("id");
 		String name = request.getParameter("name");
-		int isbn = request.getIntHeader("isbn");
+		int isbn = Integer.parseInt(request.getParameter("isbn"));
 		
-		BookDTO library = new BookDTO(id,name,isbn);
+		
+		BookDTO library = new BookDTO(-1,name,isbn);
 		
 		int result = BookDAO.registerBook(library);
 		

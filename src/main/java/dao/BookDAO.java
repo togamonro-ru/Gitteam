@@ -33,16 +33,15 @@ public class BookDAO {
 	
 	// 引数の Student インスタンスを元にデータを1件INSERTするメソッド
 	public static int registerBook(BookDTO book) {
-		String sql = "INSERT INTO book(id,name,isbn) VALUES( ?, ?, ?)";
+		String sql = "INSERT INTO book VALUES( default, ?, ?)";
 		int result = 0;
 		
 		try (
 				Connection con = getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);
 				){
-			pstmt.setInt(1,book.getId());
-			pstmt.setString(2, book.getName());
-			pstmt.setInt(3,book.getIsbn());
+			pstmt.setString(1, book.getName());
+			pstmt.setInt(2,book.getIsbn());
 			
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -69,7 +68,7 @@ public static List<BookDTO> selectAlllibrary() {
 					int id=rs.getInt("id");
 					String name=rs.getString("name");
 					int isbn=rs.getInt("isbn");
-					BookDTO employee=new BookDTO(id,name,isbn );
+					BookDTO employee=new BookDTO(id,name,isbn);
 					
 					
 					result.add(employee);
@@ -83,7 +82,7 @@ public static List<BookDTO> selectAlllibrary() {
 		return result;
 	}
 	
-	public static int deleteBook (String book) {
+	public static int deleteBook (BookDTO book) {
 		String sql = "DELETE FROM book WHERE isbn = ?";
 		int result = 0;
 
@@ -92,7 +91,7 @@ public static List<BookDTO> selectAlllibrary() {
 				PreparedStatement pstmt = con.prepareStatement(sql);			// 構文解析
 				){
 			
-			pstmt.setString(1, book);
+			pstmt.setInt(1, book.getIsbn());
 
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {

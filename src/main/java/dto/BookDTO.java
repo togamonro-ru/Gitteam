@@ -35,4 +35,9 @@ public class BookDTO {
 	public void setIsbn(int isbn) {
 		this.isbn = isbn;
 	}
+	
+	public BookDTO(int isbn) {
+		super();
+		this.isbn = isbn;
+	}
 }

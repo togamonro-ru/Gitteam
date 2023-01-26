@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.BookDAO;
+import dto.BookDTO;
 
 /**
  * Servlet implementation class DeleteServlet
@@ -32,13 +33,25 @@ public class DeleteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-	String isbn = request.getParameter("isbn");
-
-	BookDAO.deleteBook(isbn);
-
+		String isbn2 = request.getParameter("isbn");
+		
+		int isbn = Integer.parseInt(isbn2);
+		
+		// 入力された情報を元にインスタンスを生成
+		BookDTO book = new BookDTO(isbn);
+		
+		// SQL実行
+		int result = BookDAO.deleteBook(book);
+		
+		if(result == 1) {
 			String view = "WEB-INF/view/Deletesuccess.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
+		} else {
+			String view = "WEB-INF/view/Deletefail.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+			dispatcher.forward(request, response);
+		}
 	}
 
 	/**
