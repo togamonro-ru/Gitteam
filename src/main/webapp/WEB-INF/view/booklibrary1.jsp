@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>図書を登録してください</h1>
-	<form action="Register_servlet" medthod="post">
+	<form action="Register_servlet" method="post">
 	<p>ID入力：<input type=text name="id"></p>
 	<p>図書名入力：<input type="text" name="name"></p>
 	<p>ISBN：<input type="text" name="isbn"></p>
