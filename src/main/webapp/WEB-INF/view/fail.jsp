@@ -9,6 +9,6 @@
 </head>
 <body>
 	<h1>登録に失敗しました</h1>
-	<a href="home_jsp">戻る</a>
+	<a href="home">戻る</a>
 </body>
 </html>

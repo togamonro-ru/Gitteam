@@ -18,6 +18,6 @@
 		
 		<input type="submit" class="button"value="登録">
 	</form>
-	<a href="./"class="button">戻る</a>
+	<a href="home"class="button">戻る</a>
 </body>
 </html>

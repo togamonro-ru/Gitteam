@@ -10,5 +10,5 @@
 </head>
 <body>
 登録完了
-<br><a href="./"class="button">戻る</a>
+<br><a href="home"class="button">戻る</a>
 </body>

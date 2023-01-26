@@ -32,6 +32,6 @@
 		<%} %>
 
 	</table>
-	<a href="home_jsp">戻る</a>
+	<a href="home">戻る</a>
 </body>
 </html>
